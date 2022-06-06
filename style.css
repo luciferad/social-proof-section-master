@@ -1,0 +1,231 @@
+@charset "utf-8";
+
+:root {
+    /* Primary */
+    --very-dark-magenta: hsl(300, 43%, 22%);
+    --soft-pink: hsl(333, 80%, 67%);
+    /* Neutral */
+    --dark-grayish-magenta: hsl(303, 10%, 53%);
+    --light-grayish-magenta: hsl(300, 24%, 96%);
+}
+html {
+    box-sizing: border-box;
+}
+*, *:after, *:before {
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+}
+ul {
+    list-style: none;
+}
+body {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 0.9375rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--very-dark-magenta);
+}
+main {    
+    display: grid;
+    grid-template-rows: 21rem 18rem;
+    grid-template-columns: 40vw 40vw;  /* 38rem 34rem */
+    margin: 3% 2%;
+}
+.text {
+    grid-area: 1 / 1 / 2 / 2;
+}
+.rating {
+    grid-area: 1 / 2 / 2 / 3;
+    position: relative;
+}
+.comments {
+    grid-area: 2 / 1 / 3 / 3;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Text */
+
+h1 {
+    font-weight: 700;
+    font-size: 3.5rem;
+    padding: 0 5rem 2rem 0;
+}
+.text p {
+    font-size: 1.15rem;
+    padding-right: 7rem;
+    line-height: 1.6rem;
+}
+
+/* Rating */
+
+.rating li {
+    font-weight: 700;
+    width: 28rem;
+    height: 3.5rem;
+    padding: 1rem;
+
+    border-radius: 0.5rem;
+    background: var(--light-grayish-magenta);
+}
+.rating li p {
+    margin-top: 0.25rem;
+}
+.starbox {
+    margin: 0 1rem;
+    float: left;
+}
+.star {
+    width: 18px;
+    height: 18px;
+    margin-right: 0.5rem;
+}
+#rating_reviews {
+    position: absolute;
+    left: 0;
+    top: 1rem;
+}
+#rating_reportguru {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: 5.5rem;
+}
+#rating_besttech {
+    position: absolute;
+    right: 0;
+    top: 10rem;
+}
+
+/* Comments */
+
+.comments li {
+    width: 22rem;
+    height: 14rem;;
+    padding: 2rem;
+    margin: 0.5rem;
+    border-radius: 0.5rem;
+    background: var(--very-dark-magenta);
+}
+.comments img {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    float: left;
+    margin-right: 1rem;
+}
+h2 {
+    font-size: 1.1rem;
+    margin: 0.4rem 0 2rem 0;
+    line-height: 1.25rem;
+}
+.com_head_tag {
+    color: var(--soft-pink);
+}
+blockquote {
+    line-height: 1.25rem;
+    font-weight: 500;
+}
+#colton {
+    margin-top: 1rem;
+}
+#irene {
+    margin-top: 2rem;
+}
+#anne {
+    margin-top: 3rem;
+}
+
+footer {
+    margin-bottom: 1%;
+}
+
+@media screen and (max-width: 72rem) {
+    main {
+        grid-template-rows: 30rem 34rem;
+    }
+    h1 {
+        padding-top: 4rem;
+    }
+    .comments {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    #colton, #irene, #anne {
+        margin-top: 0;
+    }
+    .text p, h1 {
+        padding-right: 1rem;
+    }
+    #rating_reviews {
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        top: 4rem;
+    }
+    #rating_reportguru {
+        top: 8.5rem;
+    }
+    #rating_besttech {
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        top: 13rem;
+    }
+}
+@media screen and (max-width: 58rem) {
+    main {
+        grid-template-rows: 26rem 16rem 46rem;
+        grid-template-columns: 21rem;
+    }
+    .text {
+        grid-area: 1 / 1 / 2 / 2;
+    }
+    .rating {
+        grid-area: 2 / 1 / 3 / 2;
+    }
+    .comments {
+        grid-area: 3 / 1 / 4 / 2;
+    }
+    h1 {
+        text-align: center;
+        padding-top: 4rem;
+    }
+    .text p {
+        text-align: center;
+    }
+    .rating li {
+        width: 20rem;
+        height: 4rem;
+    }
+    .starbox {
+        float: none;
+        text-align: center;
+    }
+    .rating li p {
+        text-align: center;
+    }
+    #rating_reviews {
+        top: 1rem;
+    }
+    #rating_reportguru {
+        top: 5.5rem;
+    }
+    #rating_besttech {
+        top: 10rem;
+    }
+}
+@media screen and (min-width: 90rem) {
+    main {
+        grid-template-columns: 38rem 34rem;
+    }
+}
