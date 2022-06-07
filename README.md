@@ -69,6 +69,7 @@ item {
   margin-right: auto;
   margin-left: auto;
 }
+```
 
 ### Continued development
 
